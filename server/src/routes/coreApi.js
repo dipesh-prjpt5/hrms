@@ -8,7 +8,7 @@ import express from "express";
 const router = express.Router();
 
 //employee routes
-router.route("/employee/create").post(create(Employee));
-router.route("/employee/remove/:id").delete(remove(Employee));
+router.route("/employee/create").post(catchErrors(create(Employee)));
+router.route("/employee/remove/:id").delete(catchErrors(remove(Employee)));
 
 export default router;
